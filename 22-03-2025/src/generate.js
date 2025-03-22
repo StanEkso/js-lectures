@@ -4,7 +4,7 @@
  * нам с сервера и мы их не контролируем
  */
 
-const COFFEE_BY_ID = {
+export const COFFEE_BY_ID = {
   1: 'Americano',
   2: 'Latte',
   3: 'Cappuccino',
@@ -13,9 +13,9 @@ const COFFEE_BY_ID = {
   6: 'Iced Coffee',
 };
 
-function generateOrders(length = 10) {
+export function generateOrders(length = 10) {
   return Array.from({ length }, () => ({
-    baristaId: maybe(0.9, getRandomInt(1, Math.ceil(length * (2 / 3)))),
+    baristaId: maybe(0.9, getRandomInt(1, Math.ceil(length * (2 / 10)))),
     coffeeId: maybe(0.85, random(Object.keys(COFFEE_BY_ID))),
     cups: getRandomInt(1, 10),
     price: parseFloat(`${getRandomInt(1, 10)}.${getRandomInt(0, 99)}`),
